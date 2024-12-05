@@ -15,10 +15,10 @@ public:
 	std::string getName() const;
 
 	// Methods
-	virtual double getArea() = 0;
-	virtual double getPerimeter() = 0;
+	virtual double getArea() const = 0;
+	virtual double getPerimeter() const = 0;
 	virtual void move(Point other) = 0; // add the Point coordinates to all the points coordinates in the shape
-	virtual void printDetails() = 0;
+	virtual void printDetails() const = 0;
 
 	virtual void draw(const Canvas& canvas) = 0;
 	virtual void clearDraw(const Canvas& canvas) = 0;

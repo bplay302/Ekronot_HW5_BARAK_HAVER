@@ -127,7 +127,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="HW5.cpp" />
+    <ClCompile Include="Arrow.cpp" />
+    <ClCompile Include="Canvas.cpp" />
+    <ClCompile Include="Circle.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="Menu.cpp" />
+    <ClCompile Include="Point.cpp" />
+    <ClCompile Include="Polygon.cpp" />
+    <ClCompile Include="Rectangle.cpp" />
+    <ClCompile Include="Shape.cpp" />
+    <ClCompile Include="Triangle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Arrow.h" />
+    <ClInclude Include="Canvas.h" />
+    <ClInclude Include="CImg.h" />
+    <ClInclude Include="Circle.h" />
+    <ClInclude Include="Menu.h" />
+    <ClInclude Include="Point.h" />
+    <ClInclude Include="Polygon.h" />
+    <ClInclude Include="Rectangle.h" />
+    <ClInclude Include="Shape.h" />
+    <ClInclude Include="Triangle.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Shapes.exe" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

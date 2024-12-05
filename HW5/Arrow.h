@@ -6,29 +6,23 @@ class Arrow : public Shape
 public:
 
 	// Constructor
-	Arrow(Point a, Point b, std::string type, std::string name);
+	Arrow(const Point& a, const Point& b, const std::string& type, const std::string& name);
 
-	// Destructor
-	~Arrow();
 
 	// Getters
-	Point getSource();
-	Point getDestination();
+	Point getSource() const;
+	Point getDestination() const;
 
 	// override functions if need (virtual + pure virtual)
-	
-	
-	//////////////////////////////////////////////////////////////////////////////
-	// Canvas and Cimg cannot be used on Linux, 								//
-	// please make sure to leave it commented if you want test to run on GitLab //
-	// You can remove comments when you run your exercise locally on Windows .  //
-	//////////////////////////////////////////////////////////////////////////////
+	virtual double getArea() const override;
+	virtual double getPerimeter() const override;
+	virtual void move(Point other) override; // add the Point coordinates to all the points coordinates in the shape
+	virtual void printDetails() const override;
 
-	// virtual void draw(const Canvas& canvas);
-	// virtual void clearDraw(const Canvas& canvas);
+	virtual void draw(const Canvas& canvas) override;
+	virtual void clearDraw(const Canvas& canvas) override;
 
 
 private:
-
-	// add fields if necessary
+	Point _points[2];
 };

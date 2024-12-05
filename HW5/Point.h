@@ -17,7 +17,7 @@ public:
 	double getY() const;
 
 	// Methods
-	double distance(const Point& other);
+	double distance(const Point& other) const;
 
 private:
 	double _x, _y;
