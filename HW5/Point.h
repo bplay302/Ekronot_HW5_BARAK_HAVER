@@ -6,10 +6,7 @@ public:
 
 	// Constructors
 	Point(); // initialize values to 0
-	Point(double x, double y);
-
-	// Destructor
-	~Point();
+	Point(const double x, const double y);
 	
 	// Operators    
 	Point operator+(const Point& other) const;
@@ -20,10 +17,9 @@ public:
 	double getY() const;
 
 	// Methods
-	double distance(Point& other);
+	double distance(const Point& other);
 
 private:
-
-	// add fields if necessary
+	double _x, _y;
 
 };
