@@ -9,15 +9,11 @@ class Polygon : public Shape
 public:
 
 	// Constructor
-	Polygon(std::string type, std::string name);
-
-	// Destructor
-	~Polygon();
+	Polygon(const std::string& type, const std::string& name);
 
 	// Getters
-	std::vector<Point> getPoints();
+	std::vector<Point> getPoints() const;
 
-	// override methods if need (virtual + pure virtual)
 
 protected:
 	std::vector<Point> _points;
