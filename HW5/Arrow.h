@@ -13,7 +13,6 @@ public:
 	Point getSource() const;
 	Point getDestination() const;
 
-	// override functions if need (virtual + pure virtual)
 	virtual double getArea() const override;
 	virtual double getPerimeter() const override;
 	virtual void move(Point other) override; // add the Point coordinates to all the points coordinates in the shape

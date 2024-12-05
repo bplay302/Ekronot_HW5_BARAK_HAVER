@@ -12,9 +12,6 @@ public:
 	// Constructor
 	Circle(Point center, double radius, std::string type, std::string name);
 
-	// Destructor
-	~Circle();
-
 	// Getters
 	Point getCenter();
 	double getRadius();

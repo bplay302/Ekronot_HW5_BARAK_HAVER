@@ -1,6 +1,7 @@
 #pragma once
 #include "Point.h"
 #include "Canvas.h" 
+#include <iostream>
 #include <string>
 
 class Shape 
