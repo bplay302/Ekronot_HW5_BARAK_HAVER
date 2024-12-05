@@ -50,8 +50,3 @@ void Arrow::move(Point other)
     this->_points[0] += other;
     this->_points[1] += other;
 }
-
-void Arrow::printDetails() const
-{
-    std::cout << this->_type << "  " << this->_name << "  " << this->getArea() << "  " << this->getPerimeter() << std::endl;    
-}

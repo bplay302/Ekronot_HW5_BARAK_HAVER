@@ -19,7 +19,7 @@ public:
 	virtual double getArea() const = 0;
 	virtual double getPerimeter() const = 0;
 	virtual void move(Point other) = 0; // add the Point coordinates to all the points coordinates in the shape
-	virtual void printDetails() const = 0;
+	void printDetails() const;
 
 	virtual void draw(const Canvas& canvas) = 0;
 	virtual void clearDraw(const Canvas& canvas) = 0;
