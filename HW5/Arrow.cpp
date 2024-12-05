@@ -21,6 +21,7 @@ Arrow::Arrow(const Point& a, const Point& b, const std::string& type, const std:
     else
     {
         std::cerr << "the 2 points that makes the arrow cannot be equal" << std::endl;
+        exit(1);
     }
 }
 

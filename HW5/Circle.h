@@ -10,25 +10,21 @@ class Circle : public Shape
 public:
 
 	// Constructor
-	Circle(Point center, double radius, std::string type, std::string name);
+	Circle(const Point& center, const double radius, const std::string& type, const std::string& name);
 
 	// Getters
-	Point getCenter();
-	double getRadius();
-	
-	// override methods if need (virtual + pure virtual)
+	Point getCenter() const;
+	double getRadius() const;
 
-	//////////////////////////////////////////////////////////////////////////////
-	// Canvas and Cimg cannot be used on Linux, 								//
-	// please make sure to leave it commented if you want test to run on GitLab //
-	// You can remove comments when you run your exercise locally on Windows .  //
-	//////////////////////////////////////////////////////////////////////////////
+	virtual double getArea() const override;
+	virtual double getPerimeter() const override;
+	virtual void move(Point other) override; // add the Point coordinates to all the points coordinates in the shape
+	virtual void printDetails() const override;
 
-	// virtual void draw(const Canvas& canvas);
-	// virtual void clearDraw(const Canvas& canvas);
+	virtual void draw(const Canvas& canvas) override;
+	virtual void clearDraw(const Canvas& canvas) override;
 
 private:
-
-	// add fields if necessary
-
+	Point _center;
+	double _radios;
 };

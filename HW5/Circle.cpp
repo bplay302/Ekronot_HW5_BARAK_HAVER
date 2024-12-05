@@ -17,4 +17,6 @@
 // 	canvas.clear_circle(getCenter(), getRadius());
 // }
 
-
+Circle::Circle(const Point& center, const double radius, const std::string& type, const std::string& name)
+{
+}
