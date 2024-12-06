@@ -7,18 +7,12 @@ public:
 
 	// Constructor
 	Triangle(Point a, Point b, Point c, std::string type, std::string name);
+		
 
-	// Destructor
-	~Triangle();
-	
-	// override functions if need (virtual + pure virtual)
+	virtual double getArea() const override;
+	virtual double getPerimeter() const override;
+	virtual void move(Point other) override; // add the Point coordinates to all the points coordinates in the shape
 
-	//////////////////////////////////////////////////////////////////////////////
-	// Canvas and Cimg cannot be used on Linux, 								//
-	// please make sure to leave it commented if you want test to run on GitLab //
-	// You can remove comments when you run your exercise locally on Windows .  //
-	//////////////////////////////////////////////////////////////////////////////
-
-	// virtual void draw(const Canvas& canvas);
-	// virtual void clearDraw(const Canvas& canvas);
+	virtual void draw(const Canvas& canvas) override;
+	virtual void clearDraw(const Canvas& canvas) override;
 };
