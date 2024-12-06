@@ -1,8 +1,97 @@
 #include "Triangle.h"
+#include "Rectangle.h"
+#include "Circle.h"
+#include "Arrow.h"
+#include "Canvas.h"
+
+enum OptionChoice
+{
+	ADD_SHAPE,
+	SHAPE_INFO_AND_DATA,
+	DELETE_ALL_SHAPES,
+	EXIT
+};
+
+enum ShapeOption
+{
+	CIRCLE,
+	ARROW,
+	TRIANGLE,
+	RECTANGLE
+};
+
+void printGeneralMenu();
+void printAddMenu();
+void addShape(std::vector<Shape>& shapes);
+Circle getCircleData();
 
 void main()
 {
-	Point a, b(0, 4), c(3, 0);
-	Triangle tri(a, b, c, "Triangle", "tri");
-	tri.printDetails();
+	bool running = true;
+	Canvas canvas;
+	std::vector<Shape> shapes;
+	unsigned int choice = EXIT;
+
+	do
+	{
+		printGeneralMenu();
+
+		std::cin >> choice;
+		switch (choice)
+		{
+			case ADD_SHAPE:
+				addShape(shapes);
+				break;
+			case DELETE_ALL_SHAPES:
+				shapes.clear();
+				break;
+			case EXIT:
+				running = false;
+				break;
+		}
+	} while (running);
+}
+
+void addShape(std::vector<Shape>& shapes)
+{
+	unsigned int choice = CIRCLE;
+	printAddMenu();
+	std::cin >> choice;
+	switch (choice)
+	{
+		case CIRCLE:
+			shapes.push_back(getCircleData());
+	}
+}
+
+Circle getCircleData()
+{
+	double x = 0, y = 0, radius = 0;
+	std::string name;
+	std::cout << "Please enter X:" << std::endl;
+	std::cin >> x;
+	std::cout << "Please enter Y:" << std::endl;
+	std::cin >> y;
+	std::cout << "Please enter radius:" << std::endl;
+	std::cin >> radius;
+	std::cout << "Enter the name of the shape:" << std::endl;
+	std::cin >> name;
+
+	return Circle(Point(x, y), radius, "Triangle", name);
+}
+
+void printAddMenu()
+{
+	std::cout << "Enter 0 to add a circle.\n" <<
+		"Enter 1 to add an arrow.\n" <<
+		"Enter 2 to add a triangle.\n" <<
+		"Enter 3 to add a rectangle." << std::endl;
+}
+
+void printGeneralMenu()
+{
+	std::cout << "Enter 0 to add a new shape\n" <<
+		"Enter 1 to modify or get information from a current shape.\n" <<
+		"Enter 2 to delete all of the shapes.\n" <<
+		"Enter 3 to exit." << std::endl;
 }
