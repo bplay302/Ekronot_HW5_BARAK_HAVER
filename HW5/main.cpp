@@ -22,14 +22,15 @@ enum ShapeOption
 
 void printGeneralMenu();
 void printAddMenu();
-void addShape(std::vector<Shape>& shapes);
+void addShape(std::vector<Shape*>& shapes);
 Circle getCircleData();
+Arrow getArrowData();
 
 void main()
 {
 	bool running = true;
 	Canvas canvas;
-	std::vector<Shape> shapes;
+	std::vector<Shape*> shapes;
 	unsigned int choice = EXIT;
 
 	do
@@ -52,7 +53,7 @@ void main()
 	} while (running);
 }
 
-void addShape(std::vector<Shape>& shapes)
+void addShape(std::vector<Shape*>& shapes)
 {
 	unsigned int choice = CIRCLE;
 	printAddMenu();
@@ -60,8 +61,31 @@ void addShape(std::vector<Shape>& shapes)
 	switch (choice)
 	{
 		case CIRCLE:
-			shapes.push_back(getCircleData());
+			shapes.push_back(&getCircleData());
+			break;
+		case ARROW:
+			shapes.push_back(&getArrowData());
+			break;
 	}
+}
+
+Arrow getArrowData()
+{
+	double x = 0, y = 0;
+	std::string name;
+	Point arrowPoints[2] = {};
+	for (int i = 0; i < 2; i++)
+	{
+		std::cout << "Enter the X of point number: " << i << std::endl;
+		std::cin >> x;
+		std::cout << "Enter the Y of point number: " << i << std::endl;
+		std::cin >> y;
+		arrowPoints[i] = Point(x, y);
+		std::cout << "Enter the name of the shape:" << std::endl;
+		std::cin >> name;
+	}
+
+	return Arrow(arrowPoints[0], arrowPoints[1], "Arrow", name);
 }
 
 Circle getCircleData()
