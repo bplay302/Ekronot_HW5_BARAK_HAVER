@@ -23,6 +23,13 @@ enum ShapeOption
 	RECTANGLE
 };
 
+enum ShapeEditOtion
+{
+	MOVE,
+	DETAILS,
+	REMOVE
+};
+
 class Menu
 {
 public:
@@ -31,6 +38,8 @@ public:
 	~Menu();
 
 	void addShape();
+	void getShapesInfoAndData();
+	void clearShapes();
 	static void printGeneralMenu();
 
 private:
@@ -40,6 +49,10 @@ private:
 	myShapes::Rectangle* getRectangleData() const;
 
 	static void printAddMenu();
+	void printShapesMenu() const;
+	static void printShapeEditOptions();
+
+	void removeShape(const unsigned int index);
 
 private: 
 	Canvas _canvas;

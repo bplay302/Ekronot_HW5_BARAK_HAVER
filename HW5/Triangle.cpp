@@ -11,7 +11,7 @@ void Triangle::clearDraw(const Canvas& canvas)
 }
 
 Triangle::Triangle(Point a, Point b, Point c, std::string type, std::string name) :
-    Polygon(name, type)
+    Polygon(type, name)
 {
     double ab = a.distance(b);
     double ac = a.distance(c);

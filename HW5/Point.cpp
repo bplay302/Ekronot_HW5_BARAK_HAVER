@@ -21,8 +21,8 @@ Point Point::operator+(const Point& other) const
 
 Point& Point::operator+=(const Point& other)
 {
-	this->_x + other._x;
-	this->_x + other._x;
+	this->_x += other._x;
+	this->_y += other._y;
 
 	return *this;
 }

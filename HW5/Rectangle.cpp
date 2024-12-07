@@ -12,10 +12,11 @@ void myShapes::Rectangle::clearDraw(const Canvas& canvas)
 }
 
 myShapes::Rectangle::Rectangle(Point a, double length, double width, std::string type, std::string name):
-    Polygon(name, type)
+    Polygon(type, name)
 {
     if (width > 0 && length > 0)
     {
+        this->_points.resize(4);
         this->_points[0] = a;
         this->_points[1] = a + Point(width, length);
         this->_points[2] = a + Point(0, length);
@@ -42,6 +43,6 @@ void myShapes::Rectangle::move(Point other)
 {
     for (int i = 0; i < 4; i++)
     {
-        this->_points[0] += other;
+        this->_points[i] += other;
     }
 }
