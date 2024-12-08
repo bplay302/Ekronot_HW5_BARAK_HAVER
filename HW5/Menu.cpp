@@ -1,9 +1,5 @@
 #include "Menu.h"
 
-Menu::Menu()
-{
-}
-
 Menu::~Menu()
 {
 	this->clearShapes();
@@ -53,6 +49,7 @@ void Menu::getShapesInfoAndData()
 
 	if (!this->_shapes.empty())
 	{
+		//get shape to edit
 		do
 		{
 			system("cls");
@@ -71,7 +68,7 @@ void Menu::getShapesInfoAndData()
 
 			switch (choice)
 			{
-			case MOVE:
+			case MOVE: //move the shape by x amount on the x axis and y amount on the y axis
 				std::cout << "Please enter the X moving scale:" << std::endl;
 				std::cin >> x;
 				std::cout << "Please enter the Y moving scale:" << std::endl;
@@ -98,6 +95,7 @@ void Menu::clearShapes()
 	unsigned int shapesCount = this->_shapes.size();
 	for (int i = 0; i < shapesCount; i++)
 	{
+		//like pop first but i also clear the shape from the screen
 		this->removeShape(0);
 	}
 }
